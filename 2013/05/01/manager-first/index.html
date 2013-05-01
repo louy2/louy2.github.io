@@ -3,13 +3,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2013 | 网生</title>
+  <title>Manager First | 网生</title>
   <meta name="author" content="FRIdSUN">
+  
+  <meta name="description" content="After a night -- literally a night&amp;#39;s fight with the compiler, I finally got rid of it.
+It all started a long time ago. When I first got this Macbook Pro, I decided to search for some &quot;necessary complements&quot;. I found Homebrew. I played with it quite happily and it helped me a bit. At that time my only brew was &quot;gcc-4.7&quot;, a replacement of the extremely old gcc-4.2 provided with Xcode.
+Unfortunately later when I tried to gdb the code from my Data Structure course, I found it troublesome. I couldn&amp;#39;t compile with gcc-4.7 then use default gdb. So, when I decided to go back to the default gcc, I thought, &quot;as long as the default is enough, maybe homebrew is out of necessary.&quot;
+The previous night has proved me wrong. Software managers should always be the first to be installed and the last to be removed. 
+The first issue was on libgit2. When I reinstalled Homebrew, ran brew doctor, Unexpected dylib came into my way. I didn&amp;#39;t just remove the file warned; I knew I would change to homebrew version. But nothing online showed me how to uninstall it. So I opened an issue and luckily, @vmg helped me out. I had to find the list of installed files and remove them manually. They were in several folders and I removed them with ease. 
+Then I brewed MacVim. I was using the default vim but recently found a standalone editor more comfortable. Before the install really started, Homebrew automatically brewed CMake as it is a prerequisite, but failed to link it because I built one before. MacVim was still installed successfully. 
+&quot;OK,&quot; I thought, &quot;I&amp;#39;ll uninstall CMake and change to homebrew version as well.&quot; This time I was really on my own. No document of CMake ever mentions uninstallation, no issue page in the github page of CMake, and no local help. 
+Directly running cmake uninstall gave me error message about the file CMakeCache.txt. &quot;Nonsense,&quot; I thought. make uninstall didn&amp;#39;t work either. Noticing the existence of cmake_uninstall.cmake, I knew there&amp;#39;s a uninstall target to use. 
+Upon scrutinizing the bootstrap script used to build the compiler, I was finally clear of confusion. &quot;That&amp;#39;s neat, &quot; I said to myself silently, &quot;compile a unlinked copy to run, then compile itself.&quot; To make a try, I reran the script. I met the cache error again. With the copy of tarball I reserved, I confirmed it was safe to delete CMakeCache.txt. Second try went smoothly, and with the bootstrapped CMake, I executed cmake uninstall.
+Then I met Permission Denied. OK, add sudo to the beginning and run again. 
+brew link cmake succeeded later.">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Manager First"/>
   <meta property="og:site_name" content="网生"/>
 
   
@@ -42,12 +54,7 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title">2013</h2>
-
-
-  
-    <article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
   <div class="post-content">
     <header>
@@ -57,7 +64,7 @@
       
       
   
-    <h1 class="title"><a href="/2013/05/01/manager-first/">Manager First</a></h1>
+    <h1 class="title">Manager First</h1>
   
 
     </header>
@@ -80,25 +87,36 @@
     <footer>
       
         
-          <div class="alignleft">
-            <a href="/2013/05/01/manager-first/#more" class="more-link">Read More</a>
-          </div>
         
+  
+  <div class="tags">
+    <a href="/tags/homebrew/">homebrew</a>, <a href="/tags/libgit2/">libgit2</a>, <a href="/tags/cmake/">cmake</a>, <a href="/tags/uninstall/">uninstall</a>, <a href="/tags/coding/">coding</a>
+  </div>
+
         
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
       
       <div class="clearfix"></div>
     </footer>
   </div>
 </article>
 
-
-  
-
-  <nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav>
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">

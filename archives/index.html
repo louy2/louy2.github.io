@@ -53,17 +53,27 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-04-24T18:44:31.000Z"><a href="/2013/04/24/hello-world/">Apr 24 2013</a></time>
+        <time datetime="2013-05-01T12:44:45.000Z"><a href="/2013/05/01/manager-first/">May 1 2013</a></time>
       
       
   
-    <h1 class="title"><a href="/2013/04/24/hello-world/">Hello World</a></h1>
+    <h1 class="title"><a href="/2013/05/01/manager-first/">Manager First</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>Welcome to <a href="http://zespia.tw/hexo">Hexo</a>! This is your very first post. Check <a href="http://zespia.tw/hexo/docs">documentation</a> to learn how to use.</p>
+        <p>After a night -- literally a night&#39;s fight with the compiler, I finally got rid of it.</p>
+<p>It all started a long time ago. When I first got this Macbook Pro, I decided to search for some &quot;necessary complements&quot;. I found <a href="[1]">Homebrew</a>. I played with it quite happily and it helped me a bit. At that time my only brew was &quot;gcc-4.7&quot;, a replacement of the extremely old gcc-4.2 provided with Xcode.</p>
+<p>Unfortunately later when I tried to gdb the code from my Data Structure course, I found it troublesome. I couldn&#39;t compile with gcc-4.7 then use default gdb. So, when I decided to go back to the default gcc, I thought, &quot;as long as the default is enough, maybe homebrew is out of necessary.&quot;</p>
+<p>The previous night has proved me wrong. Software managers should always be the first to be installed and the last to be removed. </p>
+<p>The first issue was on libgit2. When I reinstalled <a href="[1]">Homebrew</a>, ran <code>brew doctor</code>, <code>Unexpected dylib</code> came into my way. I didn&#39;t just remove the file warned; I knew I would change to homebrew version. But nothing online showed me how to uninstall it. So I opened <a href="[2]">an issue</a> and luckily, <a href="[3]">@vmg</a> helped me out. I had to find the list of installed files and remove them manually. They were in several folders and I removed them with ease. </p>
+<p>Then I brewed MacVim. I was using the default vim but recently found a standalone editor more comfortable. Before the install really started, <a href="[1]">Homebrew</a> automatically brewed <a href="[4]">CMake</a> as it is a prerequisite, but failed to link it because I built one before. MacVim was still installed successfully. </p>
+<p>&quot;OK,&quot; I thought, &quot;I&#39;ll uninstall <a href="[4]">CMake</a> and change to homebrew version as well.&quot; This time I was really on my own. No document of <a href="[4]">CMake</a> ever mentions uninstallation, no issue page in the <a href="[5]">github page</a> of <a href="[4]">CMake</a>, and no local help. </p>
+<p>Directly running <code>cmake uninstall</code> gave me error message about the file <code>CMakeCache.txt</code>. &quot;Nonsense,&quot; I thought. <code>make uninstall</code> didn&#39;t work either. Noticing the existence of <code>cmake_uninstall.cmake</code>, I knew there&#39;s a uninstall target to use. </p>
+<p>Upon scrutinizing the <code>bootstrap</code> script used to build the compiler, I was finally clear of confusion. &quot;That&#39;s neat, &quot; I said to myself silently, &quot;compile a unlinked copy to run, then compile itself.&quot; To make a try, I reran the script. I met the cache error again. With the copy of tarball I reserved, I confirmed it was safe to delete <code>CMakeCache.txt</code>. Second try went smoothly, and with the bootstrapped <a href="[4]">CMake</a>, I executed <code>cmake uninstall</code>.</p>
+<p>Then I met <code>Permission Denied</code>. OK, add <code>sudo</code> to the beginning and run again. </p>
+<p><code>brew link cmake</code> succeeded later.</p>
 
       
     </div>
@@ -71,7 +81,7 @@
       
         
           <div class="alignleft">
-            <a href="/2013/04/24/hello-world/#more" class="more-link">Read More</a>
+            <a href="/2013/05/01/manager-first/#more" class="more-link">Read More</a>
           </div>
         
         
@@ -101,6 +111,23 @@
   
 
   
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/cmake/">cmake</a><small>1</small></li>
+  
+    <li><a href="/tags/coding/">coding</a><small>1</small></li>
+  
+    <li><a href="/tags/homebrew/">homebrew</a><small>1</small></li>
+  
+    <li><a href="/tags/libgit2/">libgit2</a><small>1</small></li>
+  
+    <li><a href="/tags/uninstall/">uninstall</a><small>1</small></li>
+  
+  </ul>
+</div>
+
 
   
 
