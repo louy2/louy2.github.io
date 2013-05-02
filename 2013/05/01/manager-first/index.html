@@ -3,18 +3,13 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Manager First 管理器優先 | 网生</title>
+  <title>Manager First | 网生</title>
   <meta name="author" content="FRIdSUN">
   
-  <meta name="description" content="在一整晚——真的是一整晚的奮鬥之下，我總算成功卸載了 CMake。
-After a night -- literally a night&amp;#39;s fight with the compiler, I finally got rid of CMake.
-一切開始於不久前，我拿到我這台Macbook Pro的時候。我安裝了一些“裝機必備”的東西，其中就有 Homebrew 。我還算愉快地把玩了一番。說是把玩，那時候我唯一安裝的 brew 也只有 gcc-4.7，用來代替 Xcode 提供的古董 gcc-4.2 而已。
+  <meta name="description" content="After a night -- literally a night&amp;#39;s fight with the compiler, I finally got rid of CMake.
 It all started a short time ago. When I first got this Macbook Pro, I decided to search for some &quot;necessary complements&quot;. I found Homebrew. I played with it quite happily and it helped me a bit. At that time my only brew was &quot;gcc-4.7&quot;, a replacement of the extremely old gcc-4.2 provided with Xcode.
-好景不長，我後來在 Data Structure 課上想要調試代碼的時候卻發現，OSX 默認的 gdb 無法調試 gcc-4.7 所編譯的程序。無奈之下，我只好用回默認的 gcc-4.2 ，發現也没什麼大問題。那我還要 Homebrew 做甚呢？
 Unfortunately later when I tried to gdb the code from my Data Structure course, I found it troublesome. I couldn&amp;#39;t compile with gcc-4.7 then use default gdb. So, when I decided to go back to the default gcc, I thought, &quot;as long as the default is enough, maybe homebrew is out of necessary.&quot;
-於是就有了前晚的掙扎。這深刻的教訓告訴我，無論什麼時候，程序管理器都是該最先安裝，最後卸載的。
 The previous night has proved me wrong. Software managers should always be the first to be installed and the last to be removed. 
-第一個問題出在 libgit2 。我運行 brew doctor 重新安裝 Homebrew 的時候，跳出了 Unexpected dylib 的錯誤。
 The first issue was on libgit2. When I reinstalled Homebrew, ran brew doctor, Unexpected dylib came into my way. I didn&amp;#39;t just remove the file warned; I knew I would change to homebrew version. But nothing online showed me how to uninstall it. So I opened an issue and luckily, @vmg helped me out. I had to find the list of installed files and remove them manually. They were in several folders and I removed them with ease. 
 Then I brewed MacVim. I was using the default vim but recently found a standalone editor more comfortable. Before the install really started, Homebrew automatically brewed CMake as it is a prerequisite, but failed to link it because I built one before. MacVim was still installed successfully. 
 &quot;OK,&quot; I thought, &quot;I&amp;#39;ll uninstall CMake and change to homebrew version as well.&quot; This time I was really on my own. No document of CMake ever mentions uninstallation, no issue page in the github page of CMake, and no local help. 
@@ -26,7 +21,7 @@ brew link cmake succeeded later.">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Manager First 管理器優先"/>
+  <meta property="og:title" content="Manager First"/>
   <meta property="og:site_name" content="网生"/>
 
   
@@ -140,20 +135,15 @@ brew link cmake succeeded later.">
         </div>
         
   
-    <h2 class="title">Manager First 管理器優先</h1>
+    <h2 class="title">Manager First</h1>
   
 
         <div class="entry">
         
-          <p>在一整晚——真的是一整晚的奮鬥之下，我總算成功卸載了 <a href="http://www.cmake.org">CMake</a>。</p>
-<p>After a night -- literally a night&#39;s fight with the compiler, I finally got rid of <a href="http://www.cmake.org">CMake</a>.</p>
-<p>一切開始於不久前，我拿到我這台Macbook Pro的時候。我安裝了一些“裝機必備”的東西，其中就有 <a href="http://mxcl.github.io/homebrew/">Homebrew</a> 。我還算愉快地把玩了一番。說是把玩，那時候我唯一安裝的 brew 也只有 gcc-4.7，用來代替 Xcode 提供的古董 gcc-4.2 而已。</p>
+          <p>After a night -- literally a night&#39;s fight with the compiler, I finally got rid of <a href="http://www.cmake.org">CMake</a>.</p>
 <p>It all started a short time ago. When I first got this Macbook Pro, I decided to search for some &quot;necessary complements&quot;. I found <a href="http://mxcl.github.io/homebrew/">Homebrew</a>. I played with it quite happily and it helped me a bit. At that time my only brew was &quot;gcc-4.7&quot;, a replacement of the extremely old gcc-4.2 provided with Xcode.</p>
-<p>好景不長，我後來在 Data Structure 課上想要調試代碼的時候卻發現，OSX 默認的 gdb 無法調試 gcc-4.7 所編譯的程序。無奈之下，我只好用回默認的 gcc-4.2 ，發現也没什麼大問題。那我還要 <a href="http://mxcl.github.io/homebrew/">Homebrew</a> 做甚呢？</p>
 <p>Unfortunately later when I tried to gdb the code from my Data Structure course, I found it troublesome. I couldn&#39;t compile with gcc-4.7 then use default gdb. So, when I decided to go back to the default gcc, I thought, &quot;as long as the default is enough, maybe homebrew is out of necessary.&quot;</p>
-<p>於是就有了前晚的掙扎。這深刻的教訓告訴我，無論什麼時候，程序管理器都是該最先安裝，最後卸載的。</p>
 <p>The previous night has proved me wrong. Software managers should always be the first to be installed and the last to be removed. </p>
-<p>第一個問題出在 <a href="http://libgit2.github.com">libgit2</a> 。我運行 <code>brew doctor</code> 重新安裝 <a href="http://mxcl.github.io/homebrew/">Homebrew</a> 的時候，跳出了 <code>Unexpected dylib</code> 的錯誤。</p>
 <p>The first issue was on <a href="http://libgit2.github.com">libgit2</a>. When I reinstalled <a href="http://mxcl.github.io/homebrew/">Homebrew</a>, ran <code>brew doctor</code>, <code>Unexpected dylib</code> came into my way. I didn&#39;t just remove the file warned; I knew I would change to homebrew version. But nothing online showed me how to uninstall it. So I opened <a href="https://github.com/libgit2/libgit2/issues/1525#issuecomment-17274840">an issue</a> and luckily, <a href="https://github.com/vmg">@vmg</a> helped me out. I had to find the list of installed files and remove them manually. They were in several folders and I removed them with ease. </p>
 <p>Then I brewed MacVim. I was using the default vim but recently found a standalone editor more comfortable. Before the install really started, <a href="http://mxcl.github.io/homebrew/">Homebrew</a> automatically brewed <a href="http://www.cmake.org">CMake</a> as it is a prerequisite, but failed to link it because I built one before. MacVim was still installed successfully. </p>
 <p>&quot;OK,&quot; I thought, &quot;I&#39;ll uninstall <a href="http://www.cmake.org">CMake</a> and change to homebrew version as well.&quot; This time I was really on my own. No document of <a href="http://www.cmake.org">CMake</a> ever mentions uninstallation, no issue page in the <a href="https://github.com/Kitware/CMake">github page</a> of <a href="http://www.cmake.org">CMake</a>, and no local help. </p>
