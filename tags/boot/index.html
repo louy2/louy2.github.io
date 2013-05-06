@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>中文 | 网生</title>
+  <title>boot | 网生</title>
   <meta name="author" content="FRIdSUN">
   
   <meta name="description" content="往生">
@@ -59,7 +59,7 @@
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title tag">中文</h2>
+<h2 class="archive-title tag">boot</h2>
 
 
   
@@ -69,26 +69,19 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-05-02T08:19:45.000Z"><a href="/2013/05/02/manager-first-cn/">May 2 2013</a></time>
+        <time datetime="2013-05-05T23:55:32.000Z"><a href="/2013/05/05/macbook-safe-boot-adventure/">May 5 2013</a></time>
       
       
   
-    <h1 class="title"><a href="/2013/05/02/manager-first-cn/">管理器優先</a></h1>
+    <h1 class="title"><a href="/2013/05/05/macbook-safe-boot-adventure/">Macbook Safe Boot Adventure</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>在一整晚——真的是一整晚的奮鬥之下，我總算成功卸載了 <a href="http://www.cmake.org">CMake</a>。</p>
-<p>一切開始於不久前，我拿到我這台Macbook Pro的時候。我安裝了一些“裝機必備”的東西，其中就有 <a href="http://mxcl.github.io/homebrew/">Homebrew</a> 。我還算愉快地把玩了一番。說是把玩，那時候我唯一安裝的 brew 也只有 gcc-4.7，用來代替 Xcode 提供的古董 gcc-4.2 而已。</p>
-<p>好景不長，我後來在 Data Structure 課上想要調試代碼的時候卻發現，OSX 默認的 gdb 無法調試 gcc-4.7 所編譯的程序。無奈之下，我只好用回默認的 gcc-4.2 ，發現也没什麼大問題。那我還要 <a href="http://mxcl.github.io/homebrew/">Homebrew</a> 做甚呢？</p>
-<p>於是就有了前晚的掙扎。這深刻的教訓告訴我，無論什麼時候，程序管理器都是該最先安裝，最後卸載的。</p>
-<p>第一個問題出在 <a href="http://libgit2.github.com">libgit2</a> 。我運行 <code>brew doctor</code> 重新安裝 <a href="http://mxcl.github.io/homebrew/">Homebrew</a> 的時候，跳出了 <code>Unexpected dylib</code> 的錯誤。本來我就打算換成 <a href="http://mxcl.github.io/homebrew/">Homebrew</a> 版的，但問題是，怎麼換？找了許久也不見卸載的教程。不得已，我新開了一個 <a href="https://github.com/libgit2/libgit2/issues/1525#issuecomment-17274840">issue</a> 。<a href="https://github.com/vmg">@vmg</a> 在几分鐘後回復了我，帮我找到了安裝記録，在此感謝。手動刪除的步驟就不提了。</p>
-<p>接下來纔是正題。Brew 安裝 <a href="http://code.google.com/p/macvim/">MacVim</a> 的時候，<a href="http://mxcl.github.io/homebrew/">Homebrew</a> 將 <a href="http://www.cmake.org">CMake</a> 作為前提安裝了，但因為我此前自己安裝過一次 <a href="http://www.cmake.org">CMake</a> ，所以 <a href="http://mxcl.github.io/homebrew/">Homebrew</a> 無法鏈接新安裝的版本。</p>
-<p>想着“也換成 <a href="http://mxcl.github.io/homebrew/">Homebrew</a> 版算了”，準備卸載的時候，發現這又是一個坑爹貨。<a href="http://www.cmake.org">官網</a>、<a href="https://github.com/Kitware/CMake">github頁面</a>都没有任何卸載說明，連 issue 那樣的溝通手段都没有。</p>
-<p>能用的只有剛剛學到的 <code>make uninstall</code> 了。直接運行 <code>cmake uninstall</code> 提示 <code>CMakeCache.txt</code> 損壞。“什麼玩意？”我明明看見了 <code>cmake_uninstall.cmake</code> ，說明並非如 <a href="http://libgit2.github.com">libgit2</a> 一樣缺失目標。</p>
-<p>仔細閱讀了當初編譯時用的 <code>bootstrap</code> 脚本後，我總算明白了。“還挺精巧的嘛，用自己編譯自己。”重新運行 <code>bootstrap</code> ，又遇到了 <code>CMakeCache.txt</code> 錯誤。我找來源包對比，發現只是個臨時文件，就放心刪除了。接下來果然成功引導了 <a href="http://www.cmake.org">CMake</a> ，運行 <code>cmake uninstall</code> 卸載了本機的版本。遇到 <code>Permisson Denied</code> 加了 <code>sudo</code> 。</p>
-<p>總算！<code>brew link cmake</code> 成功了。</p>
+        <p>Last night I read about the <code>mdworker: Unable to talk to lsboxd</code> problem at <a href="http://lucifr.com/2013/04/29/fix-mountain-lion-few-seconds-freeze-bug/">Lucifr</a>. I have met the freeze several times, but ignored it since it doesn&#39;t affects anything severely. I didn&#39;t notice the console error, though, so this time, I decide to eliminate them all. </p>
+<p>I restarted my Macbook Pro into Safe Mode and met the somehow familiar progress bar …… and BOOM I remembered that evil. The last time I saw it the poor machine hanged for a night before I force shut it down. </p>
+<p>As I expected, my poor Macbook Pro stuck at exactly the same place with the progress bar near quarter. </p>
 
       
     </div>
@@ -96,7 +89,7 @@
       
         
           <div class="alignleft">
-            <a href="/2013/05/02/manager-first-cn/#more" class="more-link">Read More</a>
+            <a href="/2013/05/05/macbook-safe-boot-adventure/#more" class="more-link">Read More</a>
           </div>
         
         
