@@ -65,6 +65,51 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2013-05-24T11:04:11.000Z"><a href="/2013/05/24/mdworker-error/">May 24 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/05/24/mdworker-error/">mdworker Error (To be updated)</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>I don&#39;t know when did I start to have the common OS X 10.8.2 error:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="number">5</span>/<span class="number">24</span>/<span class="number">13</span> <span class="number">8</span>:<span class="number">52</span>:<span class="number">38.838</span> AM mdworker<span class="matrix">[<span class="number">597</span>]</span>: Unable to talk to lsboxd
+<span class="number">5</span>/<span class="number">24</span>/<span class="number">13</span> <span class="number">8</span>:<span class="number">52</span>:<span class="number">38.996</span> AM sandboxd<span class="matrix">[<span class="number">598</span>]</span>: (<span class="matrix">[<span class="number">597</span>]</span>) mdworker(<span class="number">597</span>) deny mach-lookup <span class="transposed_variable">com.</span><span class="transposed_variable">apple.</span><span class="transposed_variable">ls.</span>boxd
+</pre></td></tr></table></figure>
+
+<p>I was directed to a safe-boot, but due to some unclear reason my mac cannot do so unless I remove one of its RAMs. Details are in <a href="/2013/05/24/mdworker-error">Macbook Safe Boot Adventure</a>. </p>
+<p>Unfortunately the error came back. It still doesn&#39;t bother much compared to my Macbook Pro&#39;s inability to safe boot though. I started reading <a href="http://osxbook.com"><em>Mac OS X Internals: The Book</em></a>, so I decided to get some precise information about this error.</p>
+<p>Google is amazing, and I found <a href="http://forums.applenova.com/showthread.php?t=37423">this post</a>. The post points the cause to 3rd party mdimporters, which is the most feasible I have read. Assuming Apple should have resolved the issue for their own softwares, I suspect MS Office suite and TeX suite most. I will update after trial. </p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/05/24/mdworker-error/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2013-05-05T23:55:32.000Z"><a href="/2013/05/05/macbook-safe-boot-adventure/">May 5 2013</a></time>
       
       
